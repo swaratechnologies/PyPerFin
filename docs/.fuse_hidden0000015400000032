@@ -1,21 +1,8 @@
-PyPerFin
-========
+#!/bin/bash
+# Author: Swara Technologies
+# email: swaratechnologies@outlook.com
 
-A python tool for managing your personal finance
-
-Developer Info
-==============
-This tool is developed by Swara Technologies. 
-
-Contact Info
-============
-email: swaratechnologies@outlook.com
-website: https://swaratechnologies.wordpress.com/
-
-License Info
-============
 # Copyright (c) 2013 Swara Technologies
-
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
 # (the "Software"), to deal in the Software without restriction,
@@ -36,7 +23,20 @@ License Info
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-Git Repository
-==============
-https://github.com/swaratechnologies/PyPerFin.git
+# cd DeveloperGuide
+# doxygen
+# cd latex
+# make
+# cp -rf refman.pdf ../PyPerFin_DeveloperGuide.pdf
+# make clean
+# cd ..
+# rm -rf latex
+# cd ..
 
+cd UserGuide
+mkdir tmp
+cp -rf PyPerFin_UserGuide.toc tmp/
+pdflatex -output-directory=./tmp PyPerFin_UserGuide.tex 
+cp -rf tmp/PyPerFin_UserGuide.toc .
+cp -rf tmp/PyPerFin_UserGuide.pdf .
+rm -rf tmp
